@@ -3,7 +3,7 @@ const express           = require('express')
 const mongoose          = require('mongoose')
 const bodyParser        = require('body-parser')
 const dotenv            = require('dotenv')
-// const morgan            = require('morgan')
+const morgan            = require('morgan')
 // const exphbs            = require('express-handlebars')
 const passport          = require('passport')
 const session           = require('express-session')
@@ -61,7 +61,7 @@ app.use('/clubs', require('./routes/clubs'))
 app.use('/comments', require('./routes/comments'))
 
 /* MORGAN SETUP */
-// if (process.env.NODE_ENV === 'development') { app.use(morgan('dev')) }
+if (process.env.NODE_ENV === 'development') { app.use(morgan('dev')) }
 
 /* DEPLOYMENT STATIC SETUP */ /*** FOR HEROKU ***/
 app.use(express.static(path.join(__dirname,'bookwormz', 'build')))
