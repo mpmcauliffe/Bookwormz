@@ -9,7 +9,7 @@ const passport          = require('passport')
 const session           = require('express-session')
 const cors              = require('cors')
 const colors            = require('colors')
-const MongoStore        = require('connect-mongo')(session)
+// const MongoStore        = require('connect-mongo')(session)
 
 const connectDB         = require('./config/db')
 
@@ -23,9 +23,9 @@ dotenv.config({ path: './config/config.env' })
 connectDB()
 
 /* PASSPORT SETUP */
-require('./config/passportGoogle')(passport)
-require('./config/passportFacebook')(passport)
-require('./config/passportTwitter')(passport)
+// require('./config/passportGoogle')(passport)
+// require('./config/passportFacebook')(passport)
+// require('./config/passportTwitter')(passport)
 
 /* CORS */
 app.use(cors())
@@ -35,13 +35,13 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
 // session
-app.use(session({
-    secret: process.env.SECRET,
-    resave: false,
-    saveUninitialized: false,
-    cookie: { secure: false },
-    store: new MongoStore({ mongooseConnection: mongoose.connection })
-}))
+// app.use(session({
+//     secret: process.env.SECRET,
+//     resave: false,
+//     saveUninitialized: false,
+//     cookie: { secure: false },
+//     store: new MongoStore({ mongooseConnection: mongoose.connection })
+// }))
 
 // passport
 app.use(passport.initialize())
