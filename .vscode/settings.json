@@ -1,4 +1,5 @@
 {
+    "peacock.darkForegroundColor": "#6d1f39",
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#952a4e",
         "activityBar.background": "#952a4e",
