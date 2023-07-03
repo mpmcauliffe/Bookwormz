@@ -21,7 +21,7 @@ export * from './ClubIntegration/ClubHeader';
 export * from './ClubIntegration/MemberButton';
 export * from './ClubIntegration/Members';
 
-// export * from './EmptyNotification/EmptyNotification';
+export * from './EmptyNotification/EmptyNotification';
 
 // export * from './layouts/buffer';
 // export * from './layouts/containers';
