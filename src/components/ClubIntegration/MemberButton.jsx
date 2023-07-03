@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { useHistory, } from 'react-router-dom'
-import { AppButton } from '../../components'
+import { AppButton } from '..'
 import { joinClub, leaveClub, } from '../../redux/actions/clubActions'
 
 
