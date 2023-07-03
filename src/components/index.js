@@ -30,7 +30,7 @@ export * from './layouts/grid';
 export * from './layouts/images';
 export * from './layouts/links';
 
-// export * from './messageBoard/MessageBoard';
+export * from './messageBoard/MessageBoard';
 
 // export * from './navbar/Navbar';
 
