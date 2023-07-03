@@ -1,13 +1,13 @@
 export * from './auth/Login';
 export * from './auth/Register';
 
-// export * from './bookShelf/BookShelf';
-// export * from './bookShelf/MyBookShelf';
+export * from './bookShelf/BookShelf';
+export * from './bookShelf/MyBookShelf';
 
-// export * from './buttons/AnchorButton';
-// export * from './buttons/AuthButton';
-// export * from './buttons/BasicTrigger';
-// export * from './buttons/Buttons.comp';
+export * from './buttons/AnchorButton';
+export * from './buttons/AuthButton';
+export * from './buttons/BasicTrigger';
+export * from './buttons/Buttons.comp';
 
 // export * from './ClubIntegration/bookshelf/ClubBookItem';
 // export * from './ClubIntegration/bookshelf/ClubShelf';
