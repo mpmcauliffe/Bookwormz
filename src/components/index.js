@@ -34,7 +34,7 @@ export * from './messageBoard/MessageBoard';
 
 export * from './navbar/Navbar';
 
-// export * from './search/Searchbar';
+export * from './search/Searchbar';
 
 // export * from './secure/SecureRoute';
 
