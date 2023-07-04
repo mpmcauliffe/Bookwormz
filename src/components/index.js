@@ -38,4 +38,4 @@ export * from './search/Searchbar';
 
 export * from './secure/SecureRoute';
 
-// export * from './spinner/Spinner';
+export * from './spinner/Spinner';
