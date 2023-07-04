@@ -32,7 +32,7 @@ export * from './layouts/links';
 
 export * from './messageBoard/MessageBoard';
 
-// export * from './navbar/Navbar';
+export * from './navbar/Navbar';
 
 // export * from './search/Searchbar';
 
