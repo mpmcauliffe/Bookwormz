@@ -36,6 +36,6 @@ export * from './navbar/Navbar';
 
 export * from './search/Searchbar';
 
-// export * from './secure/SecureRoute';
+export * from './secure/SecureRoute';
 
 // export * from './spinner/Spinner';
