@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { useHistory, } from 'react-router-dom'
 import { motion, } from 'framer-motion'
 import { AppButton, Buffer, FormContainer, StandarGrid, HeaderLink, HeaderSection, MainContent, } from '../../components'
-import { pageTransition, pageVariants, } from '../../pages/zAnimation'
+import { pageTransition, pageVariants, } from '../zAnimation'
 import { createClub, sendClubMessage, } from '../../redux/actions/clubActions'
 
 
