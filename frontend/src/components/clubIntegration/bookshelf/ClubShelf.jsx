@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect, useReducer, } from 'react'
+import { Fragment, useState, useEffect, useReducer, } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import Simplebar from 'simplebar-react'
