@@ -1,5 +1,5 @@
 import { useEffect, } from 'react'
-import { Route, Switch, 
+import { Route, Routes,
     BrowserRouter as Router, } from 'react-router-dom'
 import { AnimatePresence, } from 'framer-motion'
 import './App.css';
@@ -22,47 +22,47 @@ function App() {
                 {/*  */}
                 <MessageBoard />
                 <AnimatePresence exitBeforeEnter>
-                    <Switch>
+                    <Routes>
                         <Route
                             exact
                             path='/'
-                            component={Landing} />
+                            element={<Landing />} />
 
                         <Route
                             exact
                             path='/userauth'
-                            component={UserAuth} />
+                            element={<UserAuth />} />
 
                         <SecureRoute 
                             exact
                             path='/dashboard'
-                            component={Dashboard} />
+                            element={<Dashboard />} />
 
                         <SecureRoute
                             exact
                             path='/books'
-                            component={Books} />
+                            element={<Books />} />
 
                         <SecureRoute
                             exact
                             path='/clubs'
-                            component={Clubs} />
+                            element={<Clubs />} />
                         
                         <SecureRoute
                             exact
                             path='/createclub'
-                            component={CreateClub} />
+                            element={<CreateClub />} />
 
                         <SecureRoute
                             exact
                             path='/club/:clubId'
-                            component={ClubPage} />
+                            element={<ClubPage />} />
 
                         <SecureRoute
                             exact
                             path='/useraccount'
-                            component={UserAccount} />
-                    </Switch>
+                            element={<UserAccount />} />
+                    </Routes>
                 </AnimatePresence>
                 <AnchorButton />
             </Router>
