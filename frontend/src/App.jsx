@@ -4,6 +4,9 @@ import { Route, Routes,
 import { AnimatePresence, } from 'framer-motion'
 import './App.css';
 
+import { Provider } from 'react-redux'
+import store from './redux/store/store'
+
 import { Books, Dashboard, Clubs, Landing, 
     UserAuth, UserAccount, 
     ClubPage, CreateClub, } from './pages'
@@ -15,9 +18,12 @@ import M from 'materialize-css/dist/js/materialize.min.js'
         
         
 function App() {
+    useEffect(() => { M.AutoInit() }, [  ])
+
 
     return (
-        <Router>
+        <Provider store={store}>
+            <Router>
                 <Navbar />
                 {/*  */}
                 <MessageBoard />
@@ -66,6 +72,8 @@ function App() {
                 </AnimatePresence>
                 <AnchorButton />
             </Router>
+        </Provider>
+       
     );
 }
 
