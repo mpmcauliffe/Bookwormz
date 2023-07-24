@@ -2,7 +2,7 @@ import { useEffect, } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { motion, } from 'framer-motion'
-import { useHistory, useParams, } from 'react-router-dom'
+import { useNavigate, useParams, } from 'react-router-dom'
 import { BiGrid, Buffer, EmptyNotification, MainContent, Spinner, StandarGrid, 
         CommentSection, ClubHeader, ClubShelf, MemberButton, Members,} from '../../components'
 import { pageTransition, pageVariants, } from '../zAnimation'
@@ -18,13 +18,13 @@ const Club_proto = ({
     currentClub, 
     isUserAMember, isCheifAdmin, }) => {
         
-    const history                      = useHistory()
+    const navigate                      = useNavigate()
     let { clubId }                     = useParams()
     
     // console.log(currentClub)
     // console.log(clubBooks)
     useEffect(() => { 
-        if (!currentClub) { getClub(clubId, history) }
+        if (!currentClub) { getClub(clubId, navigate) }
         
         getClubBooks(clubId)
         getComments(clubId)
@@ -35,7 +35,7 @@ const Club_proto = ({
         window.scroll(0, 0)
 
     // eslint-disable-next-line
-    }, [getClub, currentClub, clubId, history, isUserAMember])
+    }, [getClub, currentClub, clubId, navigate, isUserAMember])
     
 
     if (!currentClub || Object.keys(currentClub).length === 0) { return <Spinner /> }

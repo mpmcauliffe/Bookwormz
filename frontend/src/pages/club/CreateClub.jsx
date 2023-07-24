@@ -1,7 +1,7 @@
 import { useState, useEffect, } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { useHistory, } from 'react-router-dom'
+import { useNavigate, } from 'react-router-dom'
 import { motion, } from 'framer-motion'
 import { AppButton, Buffer, FormContainer, StandarGrid, HeaderLink, HeaderSection, MainContent, } from '../../components'
 import { pageTransition, pageVariants, } from '../zAnimation'
@@ -20,7 +20,7 @@ export const CreateClub_proto = ({ createClub, sendClubMessage, }) => {
     const [bookCover, setBookCover]     = useState('')
     const [bookNumber, setBookNumber]   = useState('')
 
-    const history                       = useHistory()
+    const navigate                       = useNavigate()
 
     const onSubmit = e => {
         e.preventDefault()
@@ -31,7 +31,7 @@ export const CreateClub_proto = ({ createClub, sendClubMessage, }) => {
             return
         }
 
-        createClub({ clubName, description, bookNumber, }, history)
+        createClub({ clubName, description, bookNumber, }, navigate)
     }
 
     const handleBookCoverSelect = e => {

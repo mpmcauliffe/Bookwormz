@@ -1,5 +1,5 @@
 import { useEffect, } from 'react'
-import { useHistory, Redirect } from 'react-router-dom'
+import { useNavigate, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { loginUser, logout } from '../../../redux/actions/authActions'
@@ -7,15 +7,15 @@ import { Spinner } from '../../../components'
 
 
 const UserAuth_proto = ({ loginUser, logout, isAuthenticated, }) => {
-    const history = useHistory()
+    const navigate = useNavigate()
 
     useEffect(() => {
         if (!isAuthenticated) {
             console.log('loginUser')
-            setTimeout(() => { loginUser(history) }, 1000)
+            setTimeout(() => { loginUser(navigate) }, 1000)
         } else {
             console.log('logout')
-            setTimeout(() => { logout(history) }, 1000)
+            setTimeout(() => { logout(navigate) }, 1000)
         }
     })
 
@@ -30,7 +30,7 @@ const UserAuth_proto = ({ loginUser, logout, isAuthenticated, }) => {
 UserAuth_proto.propTypes = {
     loginUser: PropTypes.func,
     logout: PropTypes.func,
-    history: PropTypes.object.isRequired,
+    navigate: PropTypes.object.isRequired,
     isAuthenticated: PropTypes.bool.isRequired,
 }
 

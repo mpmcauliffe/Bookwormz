@@ -1,5 +1,5 @@
 import { useState, useEffect, } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { triggerAuthError, } from '../../redux/actions/authActions'
@@ -15,7 +15,7 @@ export const Searchbar_proto = ({
     searchClubs, clearSearchClubs,
 }) => {
     const [txt, setTxt] = useState('')
-    const history = useHistory()
+    const navigate = useNavigate()
 
     const changeTxt = e => {
         setTxt(e.target.value)
@@ -33,7 +33,7 @@ export const Searchbar_proto = ({
         setLoading()
         
         if (!checkUser()) {
-            triggerAuthError('1', `Search cannot be completed. Please try logging in again.`, history)
+            triggerAuthError('1', `Search cannot be completed. Please try logging in again.`, navigate)
             return
         } 
 

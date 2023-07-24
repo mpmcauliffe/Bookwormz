@@ -1,7 +1,7 @@
 import { useState, } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { useHistory, } from 'react-router-dom'
+import { useNavigate, } from 'react-router-dom'
 import { AuthButton, Buffer, FormContainer, } from '../../components'
 import { registerUser, } from '../../redux/actions/authActions'
 import { FaUser, FaAt, FaLock, } from 'react-icons/fa'
@@ -18,7 +18,7 @@ const Register_proto = ({ registerUser, }) => {
     // const [isFormComplete, setIsFormComplete] = useState(false)
     const { displayName, email, password, password2, } = formInfo
 
-    const history = useHistory()
+    const navigate = useNavigate()
 
     const onChange = e => setFormInfo({ ...formInfo, [e.target.name]: e.target.value })
         
@@ -43,7 +43,7 @@ const Register_proto = ({ registerUser, }) => {
             return
         }
 
-        registerUser(history, formInfo)
+        registerUser(navigate, formInfo)
     }
 
     return (

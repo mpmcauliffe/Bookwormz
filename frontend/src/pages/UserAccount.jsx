@@ -1,5 +1,5 @@
 import { useState, useEffect, } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { motion, } from 'framer-motion'
@@ -15,7 +15,7 @@ export const UserAccount_proto = ({
     getUserInfo, updateUserInfo, revertUserInfo, deleteUserAccount, logout,
     displayName, image, }) => {
 
-    const history                               = useHistory()
+    const navigate                               = useNavigate()
 
     const [userInfo, setUserInfo]               = useState({
         portrait: '',
@@ -50,7 +50,7 @@ export const UserAccount_proto = ({
 
     const handleAccountDelete = () => {
         deleteUserAccount()
-        logout(history)
+        logout(navigate)
     }
 
     useEffect(() => {

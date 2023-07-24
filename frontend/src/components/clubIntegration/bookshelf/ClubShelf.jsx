@@ -5,7 +5,7 @@ import Simplebar from 'simplebar-react'
 import { ClubBookItem, } from './ClubBookItem'
 import { BasicTrigger, Buffer, EmptyNotification, } from '../..'
 import { getClubBooks, getBooks, } from '../../../redux/actions/bookActions'
-import 'simplebar/dist/simplebar.min.css'
+import 'simplebar-react/dist/simplebar.min.css'
 
 
 const clubBookshelfReducer = (state, action) => {

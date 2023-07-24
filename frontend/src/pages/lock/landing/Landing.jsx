@@ -6,12 +6,12 @@ import { Login, Register, } from '../../../components'
 import M from 'materialize-css/dist/js/materialize.min.js'
 
 
-const Landing_proto = ({ isAuthenticated, error, history }) => {
+const Landing_proto = ({ isAuthenticated, error, navigate }) => {
     const [useLogin, setUseLogin]               = useState(true) 
     // const [formToggleText, setFormToggleText]   = useState('Already have and account? Login!')   
 
     if (isAuthenticated) {
-        history.push('/dashboard')
+        navigate.push('/dashboard')
     }
 
     if (error.length > 0) { 

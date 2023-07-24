@@ -7,7 +7,7 @@ import { MakeComment } from './MakeComment'
 import { InputBlock, } from './Comments.comp'
 import { BasicTrigger, Buffer, EmptyNotification, } from '../..'
 import { toggleNewCommentInput } from '../../../redux/actions/commentActions'
-import 'simplebar/dist/simplebar.min.css'
+import 'simplebar-react/dist/simplebar.min.css'
 
 
 const conversationReducer = (state, action) => {
