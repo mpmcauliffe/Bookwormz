@@ -1,22 +1,23 @@
 
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { Route, Navigate, } from 'react-router-dom'
+import { Navigate, Outlet, } from 'react-router-dom'
 
 
-const SecureRoute_proto = ({ component: Component, isAuthenticated, ...rest }) => {
+const SecureRoute_proto = ({ isAuthenticated, }) => {
 
-    return (
-        <Route 
-            { ...rest } 
-            render={props => isAuthenticated
-                ?   (
-                        <Component { ...props } />
-                ) : (
-                        <Navigate to='/' />
-                )
-            } />
-    )
+    return isAuthenticated ? <Outlet /> :  <Navigate to='/' />
+
+    // return ( 
+           
+    //         render={props => isAuthenticated
+    //             ?   (
+    //                     <Component { ...props } />
+    //             ) : (
+    //                     <Navigate to='/' />
+    //             )
+    //         } />
+    // )
 }
 
 

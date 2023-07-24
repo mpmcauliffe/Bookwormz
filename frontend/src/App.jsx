@@ -27,7 +27,7 @@ function App() {
                 <Navbar />
                 {/*  */}
                 <MessageBoard />
-                <AnimatePresence exitBeforeEnter>
+                <AnimatePresence mode='wait'>
                     <Routes>
                         <Route
                             exact
@@ -38,36 +38,75 @@ function App() {
                             exact
                             path='/userauth'
                             element={<UserAuth />} />
+                            
 
-                        <SecureRoute 
+                            {/* <Route 
+                        path='/profile'
+                        element={<PrivateRTE />}>
+                            <Route 
+                                path='/profile'
+                                element={<Profile />} />
+                    </Route>     */}
+
+                        <Route 
                             exact
                             path='/dashboard'
-                            element={<Dashboard />} />
+                            element={<SecureRoute />}>
+                            <Route
+                                exact
+                                path='/dashboard'
+                                element={<Dashboard />} />
+                        </Route>
 
-                        <SecureRoute
+                        <Route 
                             exact
                             path='/books'
-                            element={<Books />} />
-
-                        <SecureRoute
+                            element={<SecureRoute />}>
+                            <Route
+                                exact
+                                path='/books'
+                                element={<Books />} />
+                        </Route>
+                    
+                        <Route 
                             exact
                             path='/clubs'
-                            element={<Clubs />} />
-                        
-                        <SecureRoute
+                            element={<SecureRoute />}>
+                            <Route
+                                exact
+                                path='/clubs'
+                                element={<Clubs />} />
+                        </Route>
+
+                        <Route 
                             exact
                             path='/createclub'
-                            element={<CreateClub />} />
-
-                        <SecureRoute
+                            element={<SecureRoute />}>
+                            <Route
+                                exact
+                                path='/createclub'
+                                element={<CreateClub />} />
+                        </Route>
+                        
+                        <Route 
                             exact
                             path='/club/:clubId'
-                            element={<ClubPage />} />
+                            element={<SecureRoute />}>
+                            <Route
+                                exact
+                                path='/club/:clubId'
+                                element={<ClubPage />} />
+                        </Route>
 
-                        <SecureRoute
+                        <Route 
                             exact
                             path='/useraccount'
-                            element={<UserAccount />} />
+                            element={<SecureRoute />}>
+                            <Route
+                                exact
+                                path='/useraccount'
+                                element={<UserAccount />} />
+                        </Route>
                     </Routes>
                 </AnimatePresence>
                 <AnchorButton />
