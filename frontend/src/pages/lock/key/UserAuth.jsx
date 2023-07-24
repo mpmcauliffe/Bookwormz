@@ -1,5 +1,5 @@
 import { useEffect, } from 'react'
-import { useNavigate, Redirect } from 'react-router-dom'
+import { useNavigate, Navigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { loginUser, logout } from '../../../redux/actions/authActions'
@@ -19,9 +19,9 @@ const UserAuth_proto = ({ loginUser, logout, isAuthenticated, }) => {
         }
     })
 
-    // if (isAuthenticated) { <Redirect to='/dashboard' /> }
+    // if (isAuthenticated) { <Navigate to='/dashboard' /> }
 
-    // if (!isAuthenticated) { <Redirect to='/Landing' /> }
+    // if (!isAuthenticated) { <Navigate to='/Landing' /> }
 
     return <Spinner />
 }

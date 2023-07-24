@@ -1,7 +1,7 @@
 
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { Route, Redirect, } from 'react-router-dom'
+import { Route, Navigate, } from 'react-router-dom'
 
 
 const SecureRoute_proto = ({ component: Component, isAuthenticated, ...rest }) => {
@@ -13,7 +13,7 @@ const SecureRoute_proto = ({ component: Component, isAuthenticated, ...rest }) =
                 ?   (
                         <Component { ...props } />
                 ) : (
-                        <Redirect to='/' />
+                        <Navigate to='/' />
                 )
             } />
     )
