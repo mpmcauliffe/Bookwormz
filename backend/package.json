@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "cross-env NODE_ENV=development nodemon app",
-    "client": "npm run dev --prefix frontend",
+    "client": "npm run dev --prefix ../frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "start": "node app.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix bookwormz && npm run build --prefix bookwormz"
@@ -38,6 +38,11 @@
     "mongo-connect": "^0.0.6",
     "mongoose": "^7.3.4",
     "morgan": "^1.10.0",
+    "passport": "^0.6.0",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-jwt": "^4.0.1",
+    "passport-twitter": "^1.0.4",
     "session": "^0.1.0"
   }
 }
