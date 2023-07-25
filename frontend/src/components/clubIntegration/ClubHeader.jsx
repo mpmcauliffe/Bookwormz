@@ -17,7 +17,8 @@ export const ClubHeader = ({ clubName, clubCover, description }) => {
             <ClubHeaderGrid>
                 <ClubImg 
                     alt='club_book_cover'
-                    src={require(`../../assets/covers/${clubCover}.png`).default} />
+                    // src={require(`../../assets/covers/${clubCover}.png`).default} 
+                    src={`../../assets/covers/${clubCover}.png`} />
 
                 <div className='info-cell'>
                     <p>{description}</p>
