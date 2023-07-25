@@ -13,23 +13,23 @@ export const registerUser = (navigate, userData) => async dispatch => {
         // console.log(res)
         
         if (res.data.message) {
-            navigate.push('/')
+            navigate('/')
             dispatch({ type: TRIGGER_AUTH_ERROR, payload: 'User already exists!' })
             return
         }
         if (typeof res.data.token === 'undefined') {
-            navigate.push('/')
+            navigate('/')
             dispatch({ type: ERROR, payload: 'Something went wrong.', })
             return
         }
         
         localStorage.setItem('token', res.data.token)
         setUser()
-        navigate.push('/dashboard')    
+        navigate('/dashboard')    
         dispatch({ type: LOGIN })
         
     } catch (e) {
-        navigate.push('/')
+        navigate('/')
         console.log(e)
         dispatch({ type: ERROR })
     }
@@ -37,23 +37,23 @@ export const registerUser = (navigate, userData) => async dispatch => {
 
 /* authenticates user */
 export const loginUser = (navigate, userData) => async dispatch => {
-    // console.log(userData);
+    console.log(userData);
     try {
         const res = await axios.post('/auth/token', userData, config)
-        // console.log(res)
+        console.log(res)
         if (typeof res.data.token === 'undefined') {
-            navigate.push('/')
+            navigate('/')
             dispatch({ type: ERROR })
             return
         }
         
         localStorage.setItem('token', res.data.token)
         setUser()
-        navigate.push('/dashboard')    
+        navigate('/dashboard')    
         dispatch({ type: LOGIN })
         
     } catch (e) {
-        navigate.push('/')
+        navigate('/')
         dispatch({ type: ERROR })
     }
 }
@@ -65,18 +65,18 @@ export const login_DEP = navigate => async dispatch => {
         const res = await axios.get('/auth/token')
         // console.log(res)
         if (typeof res.data.token === 'undefined') {
-            navigate.push('/')
+            navigate('/')
             dispatch({ type: ERROR })
             return
         }
         
         localStorage.setItem('token', res.data.token)
         setUser()
-        navigate.push('/dashboard')    
+        navigate('/dashboard')    
         dispatch({ type: LOGIN })
         
     } catch (e) {
-        navigate.push('/')
+        navigate('/')
         dispatch({ type: ERROR })
     }
 }
@@ -85,7 +85,7 @@ export const login_DEP = navigate => async dispatch => {
 export const logout = navigate => async dispatch => {
     try {
         localStorage.removeItem('token')
-        navigate.push('/') 
+        navigate('/') 
         dispatch({ type: LOGOUT })
         // const name = 'connect.sid'
         // document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;'
@@ -94,13 +94,13 @@ export const logout = navigate => async dispatch => {
         // console.log(res)
                 
     } catch (e) {
-        navigate.push('/dashboard')
+        navigate('/dashboard')
         dispatch({ type: ERROR })
     }
 }
 
 export const triggerAuthError = (message = 'Something went wrong.', navigate) => dispatch => {
-    navigate.push('/') 
+    navigate('/') 
     dispatch({ type: TRIGGER_AUTH_ERROR, payload: message })
 }
 

@@ -73,7 +73,7 @@ export const createClub = (clubSettings, navigate) => async dispatch => {
         if (res.status === 200) {
             console.log(`%cCREATED %c${clubSettings.clubName}`, 'font-weight: bold', 'color: orange')
             console.log(res.data._doc._id)
-            navigate.push(`/club/${res.data._doc._id}`)
+            navigate(`/club/${res.data._doc._id}`)
             
             dispatch({ 
                 type: CREATE_CLUB, 
@@ -133,7 +133,7 @@ export const leaveClub = (clubName, clubId, navigate) => async dispatch => {
         const res = await axios.put(`/clubs/leaveclub/${clubId}`, config)
         console.log(`%cLEFT %c${clubName}`, 'font-weight: bold', 'color: red')
 
-        navigate.push(`/dashboard`)
+        navigate(`/dashboard`)
 
         dispatch({ type: LEAVE_CLUB, payload: res.data })
 

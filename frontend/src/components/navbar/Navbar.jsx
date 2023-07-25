@@ -43,11 +43,13 @@ const Navbar_proto = ({ isAuthenticated, }) => {
                     <NavLogoLg 
                         alt='BKW_LOGO'
                         className='right brand-logo'
-                        src='./img/bkw-sm_light.png' />    
+                        // src='./img/bkw-sm_light.png'
+                        src='/assets/branding/small/bkw-sm_light.png' />    
                     <NavLogoSm 
                         alt='BKW_LOGO'
                         className='right brand-logo'
-                        src='./img/bkw-abbr_light.png' />
+                        // src='./img/bkw-abbr_light.png'
+                        src='/assets/branding/small/bkw-abbr_light.png' />
                 </Link>
                 
                 <NavMenuLeft className='left '>

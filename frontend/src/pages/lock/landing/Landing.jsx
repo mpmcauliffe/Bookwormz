@@ -11,7 +11,7 @@ const Landing_proto = ({ isAuthenticated, error, navigate }) => {
     // const [formToggleText, setFormToggleText]   = useState('Already have and account? Login!')   
 
     if (isAuthenticated) {
-        navigate.push('/dashboard')
+        navigate('/dashboard')
     }
 
     if (error.length > 0) { 
@@ -28,7 +28,7 @@ const Landing_proto = ({ isAuthenticated, error, navigate }) => {
                 <img 
                     className='header'
                     alt='BookWormZ__logo'
-                    src='./bkw-transparent.png' />    
+                    src='/assets/branding/bkw-transparent.png' />    
             </section>
             
             <section className='container__form'>
