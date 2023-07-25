@@ -14,7 +14,7 @@ const bookCovers = [ { name: 'Forest Moon', }, { name: 'Blue Rose', },
     { name: 'Canvas', }, { name: 'Rose Canvas', }, { name: 'Sea Canvas', }, { name: 'Tablet', }, 
     { name: 'Rose Tablet', }, { name: 'Sand Tablet', }, ]
 
-export const CreateClub_proto = ({ createClub, sendClubMessage, }) => {
+const CreateClub_proto = ({ createClub, sendClubMessage, }) => {
     const [clubName, setClubName]       = useState('')
     const [description, setDescription] = useState('')
     const [bookCover, setBookCover]     = useState('')
@@ -118,7 +118,7 @@ export const CreateClub_proto = ({ createClub, sendClubMessage, }) => {
                                         alt='CLUB_BOOK-COVER'
                                         className='club-image'
                                         onClick={handleBookCoverSelect}
-                                        src={require(`../../assets/covers/${i}.png`).default} />
+                                        src={`/assets/covers/${i}.png`} />
                                 </label>
                                 <p style={{ marginTop: '3rem', }}>{cover.name}</p>
                             </span>

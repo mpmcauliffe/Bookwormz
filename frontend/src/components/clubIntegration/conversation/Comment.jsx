@@ -59,7 +59,7 @@ export const Comment_proto = ({ postReply, deleteComment,
                     ? <img 
                         className='image'
                         alt='CLUB_MEMBER'
-                        src={`${process.env.PUBLIC_URL}/profile/${profile}`} />   
+                        src={`/assets/profile/${profile}`} />   
                     : <img  
                         alt='PROFILE_IMG'
                         className='image'
@@ -67,7 +67,7 @@ export const Comment_proto = ({ postReply, deleteComment,
                         // eslint-disable-next-line
                         profile.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g)
                         ? `${profile}`
-                        : require(`../../../assets/mock/${profile}.png`).default} />}
+                        : `/assets/mock/${profile}.png`} />}
                 
 
                 <div className='identity'>
@@ -84,7 +84,7 @@ export const Comment_proto = ({ postReply, deleteComment,
                                         ? <img 
                                                 alt='reply_to'
                                                 className='reply-image'
-                                                src={`${process.env.PUBLIC_URL}/profile/${replyTo[2]}`} />   
+                                                src={`/assets/profile/${replyTo[2]}`} />   
                                         : <img
                                                 alt='reply_to'
                                                 className='reply-image'
@@ -92,7 +92,7 @@ export const Comment_proto = ({ postReply, deleteComment,
                                                     // eslint-disable-next-line
                                                     replyTo[2].match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g)
                                                     ? `${replyTo[2]}`
-                                                    : require(`../../../assets/mock/${replyTo[2]}.png`).default} />
+                                                    : `/assets/mock/${replyTo[2]}.png`} />
                                     }
                                 </div>}
                             
@@ -143,7 +143,6 @@ Comment_proto.propTypes = {
     isCheifAdmin: PropTypes.bool.isRequired,
     userId: PropTypes.string.isRequired,
     locator: PropTypes.number.isRequired,
-    
 }
 
 const mapStateToProps = state => ({

@@ -11,7 +11,7 @@ import { getUserInfo, updateUserInfo, revertUserInfo,
 import { logout } from '../redux/actions/authActions'
 
 
-export const UserAccount_proto = ({ 
+const UserAccount_proto = ({ 
     getUserInfo, updateUserInfo, revertUserInfo, deleteUserAccount, logout,
     displayName, image, }) => {
 
@@ -79,7 +79,7 @@ export const UserAccount_proto = ({
 
                 <UserInfoContainer>
                     <ProfileImage 
-                        src={`${process.env.PUBLIC_URL}/profile/${image}`}
+                        src={`/profile/${image}`}
                         alt='IMG_self'
                         // src={isNaN(image.substring(0,1)) ? require(`${image}`).default : require(`../assets/profile/${image}.svg`).defualt} 
                         />

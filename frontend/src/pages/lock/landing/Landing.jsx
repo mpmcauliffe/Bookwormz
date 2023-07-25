@@ -27,8 +27,8 @@ const Landing_proto = ({ isAuthenticated, error, navigate }) => {
             <section className='container__header'>
                 <img 
                     className='header'
-                    alt='BookWormZ__img'
-                    src={require(`./bkw-transparent.png`).default} />    
+                    alt='BookWormZ__logo'
+                    src='./bkw-transparent.png' />    
             </section>
             
             <section className='container__form'>

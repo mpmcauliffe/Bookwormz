@@ -18,7 +18,7 @@ export const ClubDock = ({ club, index, }) => {
                         className='club-image'
                         // onClick={handleBookCoverSelect}
                         // src={require(`../../assets/covers/${club.bookNumber}.png`).default} 
-                        src={`../../assets/covers/${club.bookNumber}.png`} />
+                        src={`/assets/covers/${club.bookNumber}.png`} />
                 </label>
                 <p style={{ marginTop: '3rem', color: 'black' }}>{club.clubName}</p>
             </span>
