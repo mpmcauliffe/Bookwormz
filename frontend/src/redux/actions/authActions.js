@@ -39,7 +39,7 @@ export const registerUser = (navigate, userData) => async dispatch => {
 export const loginUser = (navigate, userData) => async dispatch => {
     console.log(userData);
     try {
-        const res = await axios.post('/auth/token', userData, config)
+        const res = await axios.post('api/auth/token', userData, config)
         console.log(res)
         if (typeof res.data.token === 'undefined') {
             navigate('/')
