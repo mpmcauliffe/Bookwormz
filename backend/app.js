@@ -9,7 +9,7 @@ const passport          = require('passport')
 const session           = require('express-session')
 const cors              = require('cors')
 const colors            = require('colors')
-const MongoStore        = require('connect-mongo')(session)
+// const MongoStore        = require('connect-mongo')
 
 const connectDB         = require('./config/db')
 
@@ -35,17 +35,17 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
 // session
-app.use(session({
-    secret: process.env.SECRET,
-    resave: false,
-    saveUninitialized: false,
-    cookie: { secure: false },
-    store: new MongoStore({ mongooseConnection: mongoose.connection })
-}))
+// app.use(session({
+//     secret: process.env.SECRET,
+//     resave: false,
+//     saveUninitialized: false,
+//     cookie: { secure: false },
+//     store: MongoStore.create({ mongooseConnection: mongoose.connection })
+// }))
 
 // passport
-app.use(passport.initialize())
-app.use(passport.session())
+// app.use(passport.initialize())
+// app.use(passport.session())
 
 // set globals
 app.use(function (req, res, next) {
