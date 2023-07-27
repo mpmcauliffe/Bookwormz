@@ -14,7 +14,7 @@ export const BookShelf_proto = ({ bookResults, isLoading, }) => {
     
     
     return (
-        <BookStack isBookShelfOpen={true}> 
+        <BookStack $isBookShelfOpen={true}> 
         {/* */}{bookResults.map(book => (
                 <Book
                     removeButton={false}

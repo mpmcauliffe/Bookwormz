@@ -7,8 +7,8 @@ const fadeIn = keyframes`
 `
 
 export const BookStack = styled.section`
-    height: ${p => p.isBookShelfOpen ? `auto` : 0};
-    min-height: ${p => p.isBookShelfOpen ? `${p.openHeight}rem` : 0}; 
+    height: ${p => p.$isBookShelfOpen ? `auto` : 0};
+    min-height: ${p => p.$isBookShelfOpen ? `${p.openHeight}rem` : 0}; 
     margin-top: 7rem;
 
     display: grid;
@@ -18,7 +18,7 @@ export const BookStack = styled.section`
     overflow-y: hidden; /* to prevent 2nd scroll bar from appearing upon book opening */
 
     /* transform-origin: top center;
-    transform: ${p => p.isBookShelfOpen ? 'scaleY(1)' : 'scaleY(0)'};
+    transform: ${p => p.$isBookShelfOpen ? 'scaleY(1)' : 'scaleY(0)'};
     transition: transform 100ms; */
 
     transition: min-height 500ms;
@@ -120,7 +120,7 @@ export const CascadeArrow = styled.i`
     color: ${p => p.theme.primary};
     cursor: pointer;
 
-    transform: ${p => p.isBookShelfOpen ? 'rotate(180deg)' : ''};
+    transform: ${p => p.$isBookShelfOpen ? 'rotate(180deg)' : ''};
     transform-origin: bottom center;
     transition: transform 500ms linear;
 

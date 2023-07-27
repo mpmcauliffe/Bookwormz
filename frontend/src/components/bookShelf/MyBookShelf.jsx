@@ -31,11 +31,11 @@ export const MyBookShelf_proto = ({ myBooks, isLoading, }) => {
                 <CascadeArrow 
                     onClick={handleCascadeArrow}
                     className='fas fa-caret-up fa-5x'
-                    isBookShelfOpen={isBookShelfOpen} />
+                    $isBookShelfOpen={isBookShelfOpen} />
             </CascadeArrowContainer>
     
             <BookStack
-                isBookShelfOpen={isBookShelfOpen}
+                $isBookShelfOpen={isBookShelfOpen}
                 openHeight={(myBooks.length * 17).toString()}> 
                 {/* */}
                 {myBooks.map(book => (
