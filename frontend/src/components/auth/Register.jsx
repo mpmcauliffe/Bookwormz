@@ -49,7 +49,7 @@ const Register_proto = ({ registerUser, }) => {
     return (
         <FormContainer
             onSubmit={onSubmit}
-            toggleInputs={true}>
+            $toggleInputs={true}>
             <Buffer thickness={3} />
 
             <div className='update-info'>

@@ -96,7 +96,7 @@ const UserAccount_proto = ({
                     Edit</p>
                     <FormContainer 
                         onSubmit={onSubmit}
-                        toggleInputs={toggleInputs}>
+                        $toggleInputs={toggleInputs}>
                         <div>
                             
                             <div 

@@ -69,7 +69,7 @@ const CreateClub_proto = ({ createClub, sendClubMessage, }) => {
                 <FormContainer 
                     createClub
                     onSubmit={onSubmit}
-                    toggleInputs={true}>
+                    $toggleInputs={true}>
 
                     <div  className='update-info'>
                         <div>

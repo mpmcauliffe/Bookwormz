@@ -7,7 +7,7 @@ import { AuthButton, Buffer, FormContainer, } from '../../components'
 import { FaAt, FaLock, } from 'react-icons/fa'
 
 
-export const Login_proto = ({ loginUser, }) => {
+const Login_proto = ({ loginUser, }) => {
     const [formInfo, setFormInfo] = useState({
         email: 'ozzy@bear.com',
         password: '123456',
@@ -23,10 +23,12 @@ export const Login_proto = ({ loginUser, }) => {
         loginUser(navigate, formInfo)
     }
 
+    
+
     return (
         <FormContainer 
             onSubmit={onSubmit}
-            toggleInputs={true}>
+            $toggleInputs={true}>
             <Buffer thickness={3} />
             {/*  */}
             
