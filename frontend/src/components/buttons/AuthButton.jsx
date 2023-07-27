@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 
@@ -20,3 +21,9 @@ export const AuthButton = ({ children, toggle }) => {
         </Button>
     )
 }
+
+AuthButton.propTypes = {
+    children: PropTypes.node.isRequired,
+    toggle: PropTypes.bool.isRequired,
+}
+

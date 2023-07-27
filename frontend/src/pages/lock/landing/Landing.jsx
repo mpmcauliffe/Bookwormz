@@ -13,6 +13,7 @@ const Landing_proto = ({ isAuthenticated, error, navigate }) => {
     if (isAuthenticated) {
         navigate('/dashboard')
     }
+    
 
     if (error.length > 0) { 
         M.toast({ html: error, classes: 'red accent-4 rounded', displayLength: 9000 })
@@ -65,6 +66,7 @@ const Landing_proto = ({ isAuthenticated, error, navigate }) => {
 Landing_proto.propTypes = {
     isAuthenticated: PropTypes.bool.isRequired,
     error: PropTypes.string,
+    navigate: PropTypes.any,
 }
 
 const mapStateToProps = state => ({
