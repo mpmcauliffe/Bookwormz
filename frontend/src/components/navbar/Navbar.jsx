@@ -22,10 +22,10 @@ const Navbar_proto = ({ isAuthenticated, }) => {
         <Fragment>
             <ShadeScreen 
                 onClick={toggleMenu}
-                showScreen={isMenuVisible} />
+                $showScreen={isMenuVisible} />
             <SideMenu 
                 onClick={toggleMenu}
-                showMenu={isMenuVisible}>
+                $showMenu={isMenuVisible}>
                 
                 <ul className='nav-items nav-item'>
                     <li><Link to='/useraccount'>

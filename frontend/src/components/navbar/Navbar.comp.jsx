@@ -42,8 +42,8 @@ export const NavLogoSm = styled.img`
 `
 
 export const SideMenu = styled.div`
-    position: ${p => p.showMenu ? 'fixed' : 'absolute'};
-    left: ${p => p.showMenu ? 0 : '-60vw'};
+    position: ${p => p.$showMenu ? 'fixed' : 'absolute'};
+    left: ${p => p.$showMenu ? 0 : '-60vw'};
     z-index: 10;
     height: 100vh;
     width: 50vw;
@@ -71,7 +71,7 @@ export const SideMenu = styled.div`
     @media (min-width: 1024px) { width: 15vw; }
 `
 export const ShadeScreen = styled.div`
-    position: ${p => p.showScreen ? 'fixed' : 'absolute'};
+    position: ${p => p.$showScreen ? 'fixed' : 'absolute'};
     top: 0;
     left: 0;
     height: 133vh;
@@ -79,8 +79,8 @@ export const ShadeScreen = styled.div`
     z-index: 1;
     
     background: #000;  
-    pointer-events: ${p => p.showScreen ? 'all' : 'none'};
-    opacity: ${p => p.showScreen ? .95 : 0}; 
+    pointer-events: ${p => p.$showScreen ? 'all' : 'none'};
+    opacity: ${p => p.$showScreen ? .95 : 0}; 
     transition: opacity 500ms;
     transition-timing-function: cubic-bezier(1,0,.01,1);
 `
