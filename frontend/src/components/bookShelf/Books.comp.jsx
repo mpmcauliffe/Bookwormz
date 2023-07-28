@@ -8,7 +8,7 @@ const fadeIn = keyframes`
 
 export const BookStack = styled.section`
     height: ${p => p.$isBookShelfOpen ? `auto` : 0};
-    min-height: ${p => p.$isBookShelfOpen ? `${p.openHeight}rem` : 0}; 
+    min-height: ${p => p.$isBookShelfOpen ? `${p.$openHeight}rem` : 0}; 
     margin-top: 7rem;
 
     display: grid;

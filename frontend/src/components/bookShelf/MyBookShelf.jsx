@@ -36,7 +36,7 @@ export const MyBookShelf_proto = ({ myBooks, isLoading, }) => {
     
             <BookStack
                 $isBookShelfOpen={isBookShelfOpen}
-                openHeight={(myBooks.length * 17).toString()}> 
+                $openHeight={(myBooks.length * 17).toString()}> 
                 {/* */}
                 {myBooks.map(book => (
                     <Book
