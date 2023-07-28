@@ -11,7 +11,7 @@ export const getBooks = () => async dispatch => {
     setLoading()
 
     try {
-        const res = await axios.get(`/books/mybooks/`)
+        const res = await axios.get(`/api/books/mybooks/`)
         // console.log(res)
         if (res.status === 200) {
             if (typeof res.data.myBooks === 'string') { 
@@ -41,7 +41,7 @@ export const searchBooks = searchString => async dispatch => {
 
     const urlSearchString = searchString.replace(/ /g,"_")
     try {
-        const res = await axios.get(`/books/booksearch/${urlSearchString}`)
+        const res = await axios.get(`/api/books/booksearch/${urlSearchString}`)
         // console.log(res.data.items)
         if (typeof res.data.items === 'undefined') {
             dispatch({ 
@@ -78,7 +78,7 @@ export const searchBooks = searchString => async dispatch => {
 // Add book to profile
 export const addBook = bookInfo => async dispatch => {       
     try {
-        const res = await axios.post(`/books/addbook/`, bookInfo, config) 
+        const res = await axios.post(`/api/books/addbook/`, bookInfo, config) 
         //console.log(res)
 
         if (res.data.message === 'double') {
@@ -113,7 +113,7 @@ export const addBook = bookInfo => async dispatch => {
 // REMOVE BOOK
 export const removeBook = (bookId, title) => async dispatch => {
     try {
-        const res = await axios.delete(`/books/deletebook/${bookId}`)
+        const res = await axios.delete(`/api/books/deletebook/${bookId}`)
 
         if (res.status === 200) {
             console.log(`%cREMOVE: %c${title}`, 'font-weight: bold', 'color: red')
@@ -132,7 +132,7 @@ export const removeBook = (bookId, title) => async dispatch => {
 // GET CLUB BOOKS
 export const getClubBooks = clubId => async dispatch => {
     try {
-        const res = await axios.get(`/books/getclubbooks/${clubId}`)
+        const res = await axios.get(`/api/books/getclubbooks/${clubId}`)
 
         // console.log(res.data)
         if (res.status === 200) {
@@ -151,7 +151,7 @@ export const getClubBooks = clubId => async dispatch => {
 
 export const addBookToClub = (clubId, book) => async dispatch => {
     try {console.log(book.bookId)
-        const res = await axios.post(`/books/addbooktoclub/${clubId}`, { bookId: book.bookId })
+        const res = await axios.post(`/api/books/addbooktoclub/${clubId}`, { bookId: book.bookId })
 
         if (res.status === 200) {
             if (res.data.message === 'double') {
@@ -183,7 +183,7 @@ export const addBookToClub = (clubId, book) => async dispatch => {
 
 export const removeBookFromClub = (clubId, book) => async dispatch => {
     try {// console.log(book.bookId)
-        const res = await axios.put(`/books/removebookfromclub/${clubId}`, { bookId: book.bookId })
+        const res = await axios.put(`/api/books/removebookfromclub/${clubId}`, { bookId: book.bookId })
 
         if (res.data.message === 'removed') {
             console.log(`%cREMOVE: %c${book.title} %cfrom club`,  'font-weight: bold', 'color: green', 'font-weight: normal')
