@@ -35,7 +35,7 @@ export const Book_proto = ({
         <Fragment>
             {/*
               */}
-            <BookCover onClick={(e) => OpenBook(e, this)} isBookOpen={isBookOpen}>
+            <BookCover onClick={(e) => OpenBook(e, this)} $isBookOpen={isBookOpen}>
                 <img src={`${image}`} alt='book-cover' className='cover' />
                 <div className='right-cell'>
                     <p className='title'><strong>{truncate(title)}</strong></p>
