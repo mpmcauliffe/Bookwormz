@@ -8,7 +8,7 @@ const config = { headers: { 'Content-Type': 'application/json' } }
 export const getAllClubs = () => async dispatch => {
     // console.log('get all clubs')
     try {
-        const res = await axios.get('/clubs/getallclubs', config)
+        const res = await axios.get('/api/clubs/getallclubs', config)
         // console.log(res.data)
 
         dispatch({ type: GET_MULTIPLE_CLUBS, payload: res.data })
@@ -28,7 +28,7 @@ export const getAllClubs = () => async dispatch => {
 
 export const getClub = (clubId, navigate) => async dispatch => {
     try {
-        const res = await axios.get(`/clubs/getclub/${clubId}`, config)
+        const res = await axios.get(`/api/clubs/getclub/${clubId}`, config)
         // console.log(res.data)
 
         dispatch({ type: GET_CLUB, payload: res.data })
@@ -48,7 +48,7 @@ export const getClub = (clubId, navigate) => async dispatch => {
 
 export const getMyClubs = () => async dispatch => {
     try {
-        const res = await axios.get(`/clubs/getmyclubs/`, config)
+        const res = await axios.get(`/api/clubs/getmyclubs/`, config)
         // console.log(res.data)
         dispatch({ type: GET_MY_CLUBS, payload: res.data })
     
@@ -67,7 +67,7 @@ export const getMyClubs = () => async dispatch => {
 
 export const createClub = (clubSettings, navigate) => async dispatch => {       
     try {
-        const res = await axios.post(`/clubs/createclub/`, clubSettings, config) 
+        const res = await axios.post(`/api/clubs/createclub/`, clubSettings, config) 
         console.log(res)
 
         if (res.status === 200) {
@@ -110,7 +110,7 @@ export const createClub = (clubSettings, navigate) => async dispatch => {
 
 export const joinClub = (clubName, clubId) => async dispatch => {
     try {
-        const res = await axios.put(`/clubs/joinclub/${clubId}`, config)
+        const res = await axios.put(`/api/clubs/joinclub/${clubId}`, config)
         console.log(`%cJOINED %c${clubName}`, 'font-weight: bold', 'color: green')
 
         dispatch({ type: JOIN_CLUB, payload: res.data })
@@ -130,7 +130,7 @@ export const joinClub = (clubName, clubId) => async dispatch => {
 
 export const leaveClub = (clubName, clubId, navigate) => async dispatch => {
     try {
-        const res = await axios.put(`/clubs/leaveclub/${clubId}`, config)
+        const res = await axios.put(`/api/clubs/leaveclub/${clubId}`, config)
         console.log(`%cLEFT %c${clubName}`, 'font-weight: bold', 'color: red')
 
         navigate(`/dashboard`)
@@ -159,7 +159,7 @@ export const resetClubs = () => dispatch => { dispatch({ type: RESET_CLUB, }) }
 export const getClubBookShelf = clubId => async dispatch => {
     
     try {
-        const res = await axios.get(`clubs/getclubbooks/${clubId}`)
+        const res = await axios.get(`/api/clubs/getclubbooks/${clubId}`)
 
         console.log(res.data)
 
@@ -186,7 +186,7 @@ export const clearClubMessage = () => dispatch => { dispatch({ type: CLEAR_CLUB_
 export const fillClubs = () => async dispatch => {
     try {
         console.log('fill clubs')
-        const res = await axios.post(`/clubs/fillclubs/`)
+        const res = await axios.post(`/api/clubs/fillclubs/`)
         console.log(res.data)
 
         if (res.status === 200) {
