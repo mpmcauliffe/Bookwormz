@@ -15,7 +15,7 @@ export const createComment = (name, profile, subject, comment, clubId) => async 
     try {
         //console.log(name, profile, subject, comment)
         const commentItems = { name, profile, subject, comment }
-        const res = await axios.post(`/comments/postcomment/${clubId}`, commentItems, config)
+        const res = await axios.post(`/api/comments/postcomment/${clubId}`, commentItems, config)
         
         dispatch({ type: REFRESH_COMMENTS, payload: res.data })
 
@@ -40,7 +40,7 @@ export const postReply = (anchor, origin, content, subject, clubId, locator) => 
 
     try {
         const commentItems = { anchor, origin, content, subject, locator, }
-        const res = await axios.put(`/comments/postcomment/${clubId}`, commentItems, config)
+        const res = await axios.put(`/api/comments/postcomment/${clubId}`, commentItems, config)
         // console.log(res.data)
 
         dispatch({ type: REFRESH_COMMENTS, payload: res.data })
@@ -58,7 +58,7 @@ export const postReply = (anchor, origin, content, subject, clubId, locator) => 
 
 export const deleteComment = (commentId, originId, clubId, locator) => async dispatch => {
     try {
-        const res = await axios.delete(`/comments/deletecomment/${clubId}/${commentId}/${originId}/${locator}`, config)
+        const res = await axios.delete(`/api/comments/deletecomment/${clubId}/${commentId}/${originId}/${locator}`, config)
 
         dispatch({ type: REFRESH_COMMENTS, payload: res.data })
 
@@ -73,7 +73,7 @@ export const deleteComment = (commentId, originId, clubId, locator) => async dis
 
 export const getComments = clubId => async dispatch => {
     try {
-        const res = await axios.get(`/comments/getcomments/${clubId}`)
+        const res = await axios.get(`/api/comments/getcomments/${clubId}`)
 
         // console.log(res.data)
         if (res.status === 200) {
@@ -107,7 +107,7 @@ export const clearCommentMessage = () => dispatch => { dispatch({ type: CLEAR_CO
 export const fillComments = () => async dispatch => {
     try {
         console.log('fill comments')
-        const res = await axios.put(`/comments/fillcomments/`)
+        const res = await axios.put(`/api/comments/fillcomments/`)
         console.log(res.data)
 
         if (res.status === 200) {
