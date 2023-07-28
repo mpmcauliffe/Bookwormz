@@ -10,7 +10,7 @@ export const getUserInfo = () => async dispatch => {
     setLoading()
 
     try {
-        const res = await axios.get(`/users/myinfo/`)
+        const res = await axios.get(`/api/users/myinfo/`)
         // console.log(res.data)
         if (res.status === 200) {
             dispatch({ 
@@ -29,7 +29,7 @@ export const getUserInfo = () => async dispatch => {
 // UPDATE
 export const updateUserInfo = userInfo => async dispatch => {
     try {
-        const res = await axios.put(`/users/updatinfo/`, userInfo, config)
+        const res = await axios.put(`/api/users/updatinfo/`, userInfo, config)
         
         console.log(
         `%cUPDATED ONE OR MORE OF THE FOLLOWING: YOUR %cPROFILE PORTRAIT %cAND/OR YOUR %cDISPLAY NAME.`,
@@ -51,7 +51,7 @@ export const updateUserInfo = userInfo => async dispatch => {
 // REVERT
 export const revertUserInfo = () => async dispatch => {
     try {
-        const res = await axios.put(`/users/revertinfo/`, config)
+        const res = await axios.put(`/api/users/revertinfo/`, config)
 
         console.log(
             `%cREVERTED YOUR %cPROFILE PORTRAIT %cAND YOUR %cDISPLAY NAME %cTO ORIGINAL GOOGLE SETTING.`,
@@ -72,7 +72,7 @@ export const revertUserInfo = () => async dispatch => {
 
 export const deleteUserAccount = () => async dispatch => {
     try {
-        const res = await axios.delete(`/users/deleteuser/`, config)
+        const res = await axios.delete(`/api/users/deleteuser/`, config)
 
         console.log(`%cDELETED %c${res.data.user}'s %cUSER ACCOUNT`, 
             'font-weight: bold', 'color: red', 'font-weight: bold')
