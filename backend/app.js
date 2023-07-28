@@ -53,12 +53,12 @@ app.use(function (req, res, next) {
     next()
 })
 
-app.use('/auth', require('./routes/auth'))
+app.use('/api/auth', require('./routes/auth'))
 app.use('https://bookwormz-api.herokuapp.com/auth', require('./routes/auth'))
-app.use('/books', require('./routes/books'))
-app.use('/users', require('./routes/users'))
-app.use('/clubs', require('./routes/clubs'))
-app.use('/comments', require('./routes/comments'))
+app.use('/api/books', require('./routes/books'))
+app.use('/api/users', require('./routes/users'))
+app.use('/api/clubs', require('./routes/clubs'))
+app.use('/api/comments', require('./routes/comments'))
 
 /* MORGAN SETUP */
 if (process.env.NODE_ENV === 'development') { app.use(morgan('dev')) }
