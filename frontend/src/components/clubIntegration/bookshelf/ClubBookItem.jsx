@@ -27,7 +27,7 @@ const ClubBookItem_proto = ({ addBookToClub, removeBookFromClub,
                             && <AppButton
                             name={bookId}
                             title={title}
-                            alertButton={false}
+                            $alertButton={false}
                             onClick={() => addBookToClub(clubId, book)}
                             style={{ marginRight: '1rem', float: 'right' }}>
                                 Add</AppButton>}
@@ -36,7 +36,7 @@ const ClubBookItem_proto = ({ addBookToClub, removeBookFromClub,
                             ? <AppButton
                             name={bookId}
                             title={title}
-                            alertButton={true}
+                            $alertButton={true}
                             onClick={() => removeBookFromClub(clubId, book)}
                             style={{ marginRight: '1rem', float: 'right' }}>
                                 Remove</AppButton>

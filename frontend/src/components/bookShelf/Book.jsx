@@ -61,7 +61,7 @@ export const Book_proto = ({
                         <AppButton
                             name={bookId}
                             title={title}
-                            alertButton={removeButton}
+                            $alertButton={removeButton}
                             style={{ float: 'right' }}
                             onClick={facilitateButtonAction}>
                         {removeButton ? 'Remove' : 'Add Book'}</AppButton>

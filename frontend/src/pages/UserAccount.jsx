@@ -12,7 +12,7 @@ import { logout } from '../redux/actions/authActions'
 
 
 const UserAccount_proto = ({ 
-    getUserInfo, updateUserInfo, revertUserInfo, deleteUserAccount, logout,
+    getUserInfo, updateUserInfo, deleteUserAccount, logout, // revertUserInfo,
     displayName, image, }) => {
 
     const navigate                               = useNavigate()
@@ -46,7 +46,7 @@ const UserAccount_proto = ({
         setUserInfo({ portrait: '', newDisplayName: '' })
     }
 
-    const handleRevertClick = () => revertUserInfo()
+    // const handleRevertClick = () => revertUserInfo()
 
     const handleAccountDelete = () => {
         deleteUserAccount()
@@ -138,7 +138,7 @@ const UserAccount_proto = ({
                 <hr style={{ marginTop: '22rem',
                                 border: '.2rem dotted #D71B2D' }} />
                 <AppButton
-                    alertButton={true}
+                    $alertButton={true}
                     onClick={handleAccountDelete}
                     style={{ height: '5rem', 
                                 width: '24rem',

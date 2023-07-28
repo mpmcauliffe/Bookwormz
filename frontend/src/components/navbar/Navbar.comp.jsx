@@ -7,7 +7,7 @@ export const NavMenuLeft = styled.ul`
         font-weight: 300;
         &:hover { background: transparent; }
 
-        &::after { height: .2rem; width: 100%; background: ${p => p.theme.silver} }
+        &::after { height: .2rem; width: 100%; background: ${p => p.theme.silver}; }
     }
 
     li:first-of-type { margin: 0 0 1rem -2rem; }

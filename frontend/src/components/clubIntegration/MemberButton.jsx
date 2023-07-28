@@ -19,7 +19,7 @@ const MemberButton_proto = ({ isUserAMember, joinClub, leaveClub, currentId, clu
 
     return (
         <AppButton
-            alertButton={isUserAMember}
+            $alertButton={isUserAMember}
             onClick={handleMemberButtonCLick}
         >{isUserAMember ? 'Leave Club' : 'Join Club'}</AppButton>
     )
