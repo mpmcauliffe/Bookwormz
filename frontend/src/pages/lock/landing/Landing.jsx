@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate, } from 'react-router-dom'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { LandingContainer, } from './Landing.comp'
@@ -6,8 +7,9 @@ import { Login, Register, } from '../../../components'
 import M from 'materialize-css/dist/js/materialize.min.js'
 
 
-const Landing_proto = ({ isAuthenticated, error, navigate }) => {
+const Landing_proto = ({ isAuthenticated, error, }) => {
     const [useLogin, setUseLogin]               = useState(true) 
+    const navigate = useNavigate();
     // const [formToggleText, setFormToggleText]   = useState('Already have and account? Login!')   
 
     if (isAuthenticated) {
@@ -66,7 +68,7 @@ const Landing_proto = ({ isAuthenticated, error, navigate }) => {
 Landing_proto.propTypes = {
     isAuthenticated: PropTypes.bool.isRequired,
     error: PropTypes.string,
-    navigate: PropTypes.any,
+    // navigate: PropTypes.any,
 }
 
 const mapStateToProps = state => ({

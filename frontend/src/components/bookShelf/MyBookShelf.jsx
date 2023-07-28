@@ -18,7 +18,7 @@ export const MyBookShelf_proto = ({ myBooks, isLoading, }) => {
     if (myBooks.length < 1) { 
         return (
             <EmptyNotification 
-                library
+                $library
                 linkTo={'/books'}
                 linkMessage={'Search library'}
                 preMessage={'You don\'t have any saved books.'} />
