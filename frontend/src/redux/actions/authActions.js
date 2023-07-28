@@ -9,7 +9,7 @@ const config = { headers: { 'Content-Type': 'application/json' } }
 export const registerUser = (navigate, userData) => async dispatch => {
     // console.log(navigate, userData);
     try {
-        const res = await axios.post('/auth/register', userData, config)
+        const res = await axios.post('/api/auth/register', userData, config)
         // console.log(res)
         
         if (res.data.message) {
@@ -62,7 +62,7 @@ export const loginUser = (navigate, userData) => async dispatch => {
 /* authenticates user */
 export const login_DEP = navigate => async dispatch => {
     try {
-        const res = await axios.get('/auth/token')
+        const res = await axios.get('/api/auth/token')
         // console.log(res)
         if (typeof res.data.token === 'undefined') {
             navigate('/')
@@ -89,7 +89,7 @@ export const logout = navigate => async dispatch => {
         dispatch({ type: LOGOUT })
         // const name = 'connect.sid'
         // document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;'
-        // const res = await axios.get('/auth/logout')
+        // const res = await axios.get('/api/auth/logout')
 
         // console.log(res)
                 

@@ -1,29 +1,37 @@
-import { useState, useEffect } from 'react'
-import { useNavigate, } from 'react-router-dom'
-import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
-import { LandingContainer, } from './Landing.comp'
-import { Login, Register, } from '../../../components'
-import M from 'materialize-css/dist/js/materialize.min.js'
+import { useState, useEffect, } from 'react';
+import { useNavigate, } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { LandingContainer, } from './Landing.comp';
+import { Login, Register, } from '../../../components';
+import M from 'materialize-css/dist/js/materialize.min.js';
 
 
 const Landing_proto = ({ isAuthenticated, error, }) => {
-    const [useLogin, setUseLogin]               = useState(true) 
+    const [useLogin, setUseLogin]               = useState(true); 
     const navigate = useNavigate();
     // const [formToggleText, setFormToggleText]   = useState('Already have and account? Login!')   
 
     if (isAuthenticated) {
-        navigate('/dashboard')
+        navigate('/dashboard');
     }
     
+    useEffect(() => {
+        if (error.length > 0) {
+          M.toast({
+            html: error,
+            classes: 'red accent-4 rounded',
+            displayLength: 4000,
+          });
+        }
+      }, [error]);
+    // if (error.length > 0 && !isAuthenticated) { 
+    //     // M.toast({ html: error, classes: 'red accent-4 rounded', displayLength: 4000 });
+    // }
 
-    if (error.length > 0) { 
-        M.toast({ html: error, classes: 'red accent-4 rounded', displayLength: 9000 })
-    }
-
-    const handleToggleClick = () => setUseLogin(!useLogin)
+    const handleToggleClick = () => setUseLogin(!useLogin);
     
-    useEffect(() => { window.scroll(0, 0) }, [])
+    useEffect(() => { window.scroll(0, 0) }, []);
 
     return (
         <LandingContainer>
@@ -62,7 +70,7 @@ const Landing_proto = ({ isAuthenticated, error, }) => {
                         </>)}
             </section>
         </LandingContainer>
-    )
+    );
 }
 
 Landing_proto.propTypes = {
@@ -74,7 +82,7 @@ Landing_proto.propTypes = {
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated,
     error: state.auth.error,
-})
+});
 
-const Landing = connect(mapStateToProps, { })(Landing_proto)
-export { Landing }
+const Landing = connect(mapStateToProps, { })(Landing_proto);
+export { Landing };

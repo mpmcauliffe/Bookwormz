@@ -1,24 +1,24 @@
-import { useEffect, } from 'react'
+import { useEffect, } from 'react';
 import { Route, Routes,
-    BrowserRouter as Router, } from 'react-router-dom'
-import { AnimatePresence, } from 'framer-motion'
+    BrowserRouter as Router, } from 'react-router-dom';
+import { AnimatePresence, } from 'framer-motion';
 import './App.css';
 
-import { Provider } from 'react-redux'
-import store from './redux/store/store'
+import { Provider } from 'react-redux';
+import store from './redux/store/store';
 
 import { Books, Dashboard, Clubs, Landing, 
     UserAuth, UserAccount, 
-    ClubPage, CreateClub, } from './pages'
+    ClubPage, CreateClub, } from './pages';
 import { AnchorButton, MessageBoard, Navbar, 
-        SecureRoute, } from './components'
+        SecureRoute, } from './components';
 
-import 'materialize-css/dist/css/materialize.min.css'
-import M from 'materialize-css/dist/js/materialize.min.js'
+import 'materialize-css/dist/css/materialize.min.css';
+import M from 'materialize-css/dist/js/materialize.min.js';
         
         
 function App() {
-    useEffect(() => { M.AutoInit() }, [  ])
+    useEffect(() => { M.AutoInit(); }, [  ]);
 
 
     return (
