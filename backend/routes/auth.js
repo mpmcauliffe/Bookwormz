@@ -13,7 +13,7 @@ const router = express.Router()
 // @route /auth/token
 router.post('/token', async (req, res) => {
     const secret                    = process.env.JWT_SECRET
-    const { email, password}        = req.body
+    const { email, password, }      = req.body
     
     try {
         //res.send({ "bears": "are cute" })

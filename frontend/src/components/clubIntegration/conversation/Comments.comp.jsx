@@ -23,7 +23,7 @@ export const CommentBlock = styled.div`
     }
     .input-bar {
         display: grid;
-        height: ${p => p.isReplyOpen || p.showInputBlock ? '25rem' : '5rem'};
+        height: ${p => p.$isReplyOpen || p.$showInputBlock ? '25rem' : '5rem'};
         transition: height 750ms;
     }
     .image { height: 8rem; width: 8rem; border-radius: 50%; }
@@ -37,7 +37,7 @@ export const CommentBlock = styled.div`
         cursor: pointer; 
     }
     .input-area {
-        height: ${p => p.isReplyOpen || p.showInputBlock ? '10rem' : 0};
+        height: ${p => p.$isReplyOpen || p.$showInputBlock ? '10rem' : 0};
         width: 100%;
 
         padding: .5rem;
@@ -45,16 +45,16 @@ export const CommentBlock = styled.div`
         background: #fafafa;
     }
     .input-text, .input-area, .input-submit {
-        opacity: ${p => p.isReplyOpen || p.showInputBlock ? 1 : 0};
+        opacity: ${p => p.$isReplyOpen || p.$showInputBlock ? 1 : 0};
         transition: all 500ms ease-out;
     }
     .input-submit {
         height: 4.5rem;
         
         font-size: 1.6rem;
-        background: ${p => p.isSubmitable ? '#578c5e' : 'transparent'};;
-        color: ${p => p.isSubmitable ? p.color : '#646464'};
-        border: .1rem solid ${p => p.isSubmitable ? '#578c5e' : '#646464'};
+        background: ${p => p.$isSubmitable ? '#578c5e' : 'transparent'};;
+        color: ${p => p.$isSubmitable ? p.color : '#646464'};
+        border: .1rem solid ${p => p.$isSubmitable ? '#578c5e' : '#646464'};
         border-radius: .3rem;
 
         cursor: ${p => p.isSubmitable ? 'pointer' : 'default'};
@@ -74,13 +74,13 @@ export const CommentBlock = styled.div`
 `
 
 export const InputBlock = styled(CommentBlock)`
-    height: ${p => p.showInputBlock ? '60rem' : 0};
+    height: ${p => p.$showInputBlock ? '60rem' : 0};
 
     background: #f7f7f7;
-    padding: ${p => p.showInputBlock ? '1rem' : 0};
-    border: ${p => p.showInputBlock ? '2rem dashed #f7f7f7' : 0};
+    padding: ${p => p.$showInputBlock ? '1rem' : 0};
+    border: ${p => p.$showInputBlock ? '2rem dashed #f7f7f7' : 0};
     /* border: 0; */
-    opacity: ${p => p.showInputBlock ? 1 : 0};
+    opacity: ${p => p.$showInputBlock ? 1 : 0};
     transition: all 500ms ease-out;
 
     .subject-input { &:focus { border-bottom: .2rem solid #578c5e; !important } } }

@@ -57,11 +57,11 @@ const CommentSection_proto = ({
             }
             {/*  */}
             {showNewCommentInput  
-                && <InputBlock showInputBlock={showNewCommentInput}>
+                && <InputBlock $showInputBlock={showNewCommentInput}>
                     <MakeComment
                         userProfile={image}
                         displayName={displayName}
-                        showInputBlock={showNewCommentInput} />
+                        $showInputBlock={showNewCommentInput} />
                 </InputBlock>}
 
             {!showNewCommentInput
@@ -73,7 +73,7 @@ const CommentSection_proto = ({
                                         <Comment 
                                             locator={index}
                                             comment={comment}
-                                            isUserAMember={isUserAMember} />
+                                            $isUserAMember={isUserAMember} />
                                         <Buffer thickness={.5} />
                                     </div>))}    
                             </div>

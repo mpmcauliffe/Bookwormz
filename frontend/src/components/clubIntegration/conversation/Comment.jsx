@@ -7,7 +7,7 @@ import { CommentBlock, } from './Comments.comp'
 import { postReply, deleteComment, } from '../../../redux/actions/commentActions'
 
 
-export const Comment_proto = ({ postReply, deleteComment, 
+const Comment_proto = ({ postReply, deleteComment, 
     comment, isCheifAdmin, userId, locator, isUserAMember, }) => {
 
     const { _id, memberId, name, profile, subject, content, 
@@ -50,8 +50,8 @@ export const Comment_proto = ({ postReply, deleteComment,
         <CommentBlock 
             color={color}
             border={border}
-            isReplyOpen={makeReply}
-            isSubmitable={replyContent.length > 0 ? true : false}>
+            $isReplyOpen={makeReply}
+            $isSubmitable={replyContent.length > 0 ? true : false}>
             <section 
                 id={`${_id}`}
                 className='top-bar'>
@@ -143,6 +143,8 @@ Comment_proto.propTypes = {
     isCheifAdmin: PropTypes.bool.isRequired,
     userId: PropTypes.string.isRequired,
     locator: PropTypes.number.isRequired,
+    comment: PropTypes.object.isRequired,
+    isUserAMember: PropTypes.bool.isRequired,
 }
 
 const mapStateToProps = state => ({
