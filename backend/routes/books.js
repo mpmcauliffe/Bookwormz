@@ -18,7 +18,7 @@ router.get('/booksearch/:urlSearchString', verification, (req, res) => {
     const { urlSearchString } = req.params
     const searchString = urlSearchString.replace(/_/g, " ")
     // &maxResults=40
-
+    console.log(searchString);
     needle.get(`${API_URL}${searchString}&maxResults=20`, (err, response) => {
         // console.log(response.body)
         res.json(response.body)

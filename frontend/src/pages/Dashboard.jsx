@@ -1,31 +1,31 @@
-import { useEffect, } from 'react'
-import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
-import { motion, } from 'framer-motion'
-import { getUserInfo } from '../redux/actions/accountActions'
-import { getBooks, } from '../redux/actions/bookActions'
-import { getMyClubs, resetClubs, } from '../redux/actions/clubActions'
-import { resetComments, } from '../redux/actions/commentActions'
-import { pageTransition, pageVariants, } from './zAnimation'
-import { Buffer, ClubDock, EmptyNotification, MyBookShelf, HeaderSection, MainContent, StandarGrid } from '../components'
+import { useEffect, } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { motion, } from 'framer-motion';
+import { getUserInfo } from '../redux/actions/accountActions';
+import { getBooks, } from '../redux/actions/bookActions';
+import { getMyClubs, resetClubs, } from '../redux/actions/clubActions';
+import { resetComments, } from '../redux/actions/commentActions';
+import { pageTransition, pageVariants, } from './zAnimation';
+import { Buffer, ClubDock, EmptyNotification, MyBookShelf, HeaderSection, MainContent, StandarGrid } from '../components';
 
 
-export const Dashboard_proto = ({ 
+const Dashboard_proto = ({ 
     getUserInfo, displayName, 
     getBooks, 
     getMyClubs, resetClubs, myClubs,  }) => {
 
     useEffect(() => { 
-        getUserInfo()
-        getBooks()
-        getMyClubs() 
-        resetClubs()
-        resetComments()
+        getUserInfo();
+        getBooks();
+        getMyClubs();
+        resetClubs();
+        resetComments();
 
-        window.scroll(0, 0)
+        window.scroll(0, 0);
         
     // eslint-disable-next-line
-    }, [ ])
+    }, [ ]);
     
 
     return (
@@ -69,7 +69,7 @@ export const Dashboard_proto = ({
             </MainContent>
         </motion.div>
         
-    )
+    );
 }
 
 
@@ -90,7 +90,7 @@ Dashboard_proto.propTypes = {
 const mapStateToProps = state => ({
     displayName: state.account.displayName,
     myClubs: state.clubs.myClubs,
-})
+});
 
-const Dashboard = connect(mapStateToProps, { getUserInfo, getBooks, getMyClubs, resetClubs, })(Dashboard_proto)
-export { Dashboard }
+const Dashboard = connect(mapStateToProps, { getUserInfo, getBooks, getMyClubs, resetClubs, })(Dashboard_proto);
+export { Dashboard };

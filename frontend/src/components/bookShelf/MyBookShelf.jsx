@@ -1,19 +1,19 @@
-import { Fragment, useState, useEffect, } from 'react'
-import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
-import { Book, } from './Book'
-import { EmptyNotification, Spinner } from '..'
-import { BookStack, CascadeArrow, CascadeArrowContainer, } from './Books.comp'
+import { Fragment, useState, useEffect, } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { Book, } from './Book';
+import { EmptyNotification, Spinner } from '..';
+import { BookStack, CascadeArrow, CascadeArrowContainer, } from './Books.comp';
 
 
-export const MyBookShelf_proto = ({ myBooks, isLoading, }) => {
-    const [isBookShelfOpen, setIsBookShelfOpen] = useState(true)
+const MyBookShelf_proto = ({ myBooks, isLoading, }) => {
+    const [isBookShelfOpen, setIsBookShelfOpen] = useState(true);
 
-    const handleCascadeArrow = () => setIsBookShelfOpen(!isBookShelfOpen)
+    const handleCascadeArrow = () => setIsBookShelfOpen(!isBookShelfOpen);
 
-    useEffect(() => { }, [myBooks, isLoading])
+    useEffect(() => { }, [myBooks, isLoading]);
 
-    if (isLoading) { return <Spinner /> }
+    if (isLoading) { return <Spinner />; }
     // console.log(myBooks)
     if (myBooks.length < 1) { 
         return (
@@ -22,7 +22,7 @@ export const MyBookShelf_proto = ({ myBooks, isLoading, }) => {
                 linkTo={'/books'}
                 linkMessage={'Search library'}
                 preMessage={'You don\'t have any saved books.'} />
-        ) 
+        ); 
     } 
     
     return (
@@ -62,7 +62,7 @@ export const MyBookShelf_proto = ({ myBooks, isLoading, }) => {
             <hr/>
         </Fragment>
         
-    )
+    );
 }
 
 
@@ -75,7 +75,7 @@ MyBookShelf_proto.propTypes = {
 const mapStateToProps = state => ({
     myBooks: state.books.myBooks,
     isLoading: state.books.isLoading,
-})
+});
 
-const MyBookShelf = connect(mapStateToProps, {  })(MyBookShelf_proto)
-export { MyBookShelf }
+const MyBookShelf = connect(mapStateToProps, {  })(MyBookShelf_proto);
+export { MyBookShelf };

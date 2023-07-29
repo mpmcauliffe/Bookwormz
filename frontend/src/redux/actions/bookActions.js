@@ -40,6 +40,7 @@ export const searchBooks = searchString => async dispatch => {
     setLoading()
 
     const urlSearchString = searchString.replace(/ /g,"_")
+
     try {
         const res = await axios.get(`/api/books/booksearch/${urlSearchString}`)
         // console.log(res.data.items)

@@ -13,9 +13,13 @@ import { Books, Dashboard, Clubs, Landing,
 import { AnchorButton, MessageBoard, Navbar, 
         SecureRoute, } from './components';
 
+import setAuthToken from './utils/setAuthToken';
+
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
-        
+
+
+if (localStorage.token) { setAuthToken(localStorage.token); }
         
 function App() {
     useEffect(() => { M.AutoInit(); }, [  ]);

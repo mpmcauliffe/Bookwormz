@@ -72,7 +72,7 @@ export const BookCover = styled.div`
         height: ${p => p.$isBookOpen ? '81rem' : '16rem'};
         .title { font-size: 2.2rem; }
         .subtitle { font-size: 1.9rem; }
-        .author { font-size: 1.7rem }
+        .author { font-size: 1.7rem; }
     }
 
     @media(min-width: 1140px) { 
