@@ -51,7 +51,7 @@ export const searchBooks = searchString => async dispatch => {
             })
             return
         }
-
+console.log(res.data.items);
         const bundle = {
             books: res.data.items,
             searchString,

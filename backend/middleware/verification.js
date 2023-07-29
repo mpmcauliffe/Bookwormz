@@ -3,7 +3,7 @@ const jwt           = require('jsonwebtoken')
 const secret        = process.env.JWT_SECRET
 
 module.exports = function(req, res, next) {
-    console.log(req.header('x-auth-token'));
+    
     // get token
     const token = req.header('x-auth-token')
     // check if not token
