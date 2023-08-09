@@ -6,10 +6,9 @@ export default defineConfig({
     plugins: [react()],
     server: {
         proxy: {
-            // target: "http://localhost:5000",
-            // '^/api/': 'http://localhost:5000/',
             "/api": {
-                target: "http://localhost:5000",
+                // target: "http://localhost:5000",
+                target: "https://bookwormz-api.onrender.com",
                 changeOrigin: true,
                 // secure: false,
                 // rewrite: (path) => path.replace(/^\/api/, ''), // Remove the /api prefix
