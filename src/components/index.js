@@ -9,17 +9,17 @@ export * from './buttons/AuthButton';
 export * from './buttons/BasicTrigger';
 export * from './buttons/Buttons.comp';
 
-export * from './ClubIntegration/bookshelf/ClubBookItem';
-export * from './ClubIntegration/bookshelf/ClubShelf';
+export * from './clubIntegration/bookshelf/ClubBookItem';
+export * from './clubIntegration/bookshelf/ClubShelf';
 
-export * from './ClubIntegration/conversation/Comment';
-export * from './ClubIntegration/conversation/CommentSection';;
-export * from './ClubIntegration/conversation/MakeComment';
+export * from './clubIntegration/conversation/Comment';
+export * from './clubIntegration/conversation/CommentSection';
+export * from './clubIntegration/conversation/MakeComment';
 
-export * from './ClubIntegration/ClubDock';
-export * from './ClubIntegration/ClubHeader';
-export * from './ClubIntegration/MemberButton';
-export * from './ClubIntegration/Members';
+export * from './clubIntegration/ClubDock';
+export * from './clubIntegration/ClubHeader';
+export * from './clubIntegration/MemberButton';
+export * from './clubIntegration/Members';
 
 export * from './EmptyNotification/EmptyNotification';
 
